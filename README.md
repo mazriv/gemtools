@@ -37,7 +37,7 @@ extract_reads_interleaved: Obtain reads with particular barcodes from Long Range
 
 
 
-Citation for gemtools can be found at: DOI:10.1093/bioinformatics/btz239
+Citation for gemtools can be found at: https://academic.oup.com/bioinformatics/article/35/21/4397/5426055
 
 
 

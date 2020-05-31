@@ -1,7 +1,14 @@
+
+
+
 This project contains scripts to run tools from the gemtools suite to support Brain TRI project.
 
 The original gemtools github and further info can be found at:
 https://github.com/sgreer77/gemtools . (citation is also below)
+
+Cancer genome variants: useful for single nucleotide variants (SNVs), copy number variants (CNVs), structural variants (SVs), fusions, haplotyping. 
+
+
 
 Gemtools contains the following tools to analyze 10X Genomics linked-reads whole genome sequencing data:
 

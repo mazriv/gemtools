@@ -8,6 +8,12 @@ https://github.com/sgreer77/gemtools . (citation is also below)
 
 Cancer genome variants: useful for single nucleotide variants (SNVs), copy number variants (CNVs), structural variants (SVs), fusions, haplotyping. 
 
+Topics: linked-reads whole genome sequencing (LR-WGS), whole genome sequencing (WGS), barcodes, gems, 10x Genomics.
+
+Type: scripts.
+
+
+
 
 
 Gemtools contains the following tools to analyze 10X Genomics linked-reads whole genome sequencing data:

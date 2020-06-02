@@ -1,0 +1,44 @@
+#!/bin/bash
+#$ -cwd
+
+
+#A script to run tools from the gemtools suite to support Brain TRI project
+#By Mazdak Riverin and Trevor Pugh
+#May 31, 2020
+
+#################
+# set_bc_window #
+#################
+
+#############
+# ARGUMENTS #
+#############
+
+#To make this script generalizable, replace the following hard-coded arguments
+#with commands to collect command-line arguments, i.e. $1=INDIR, $2=OUTDIR
+INDIR='/.mounts/labs/TRI_Brain/production/191212_A00469_0071_AHWWMGDSXX/GBM618/outs/'
+OUTDIR='/.mounts/labs/TRI_Brain/pughlab/mazdak/GBM618'
+
+#################################################################################################################
+#Generate windows around SV breakpoints for SV analysis using gemtools (for LR-WGS) on OICR's Univa Grid engine #
+#################################################################################################################
+
+#module load gemtools as it is installed directly in the pughlab home directory via modulator.
+module load conda        #on first time run of conda by each user, they need to run: "conda init"
+module load gemtools/0.1 #also loads python/2.7.13 rstats-shlib-rpy2/3.3.3 gemtools-rlibs/0.1
+
+#Generate windows around SV breakpoints for SV analysis
+#gemtools -T set_bc_window [OPTIONS] -i [LR_input.bedpe] -w [window_size] -m [run_mode:auto|window] -o [out.bed]
+#Input:
+#-i bedpe file of SV breakpoints; this is typically the Long Ranger output: large_sv_calls.bedpe OR large_sv_candidates.bedpe
+#-m mode to generate windows; can be 'auto' or 'window'
+#Output:
+#-o output file: bed file with windows around breakpoints
+#Options:
+#-w size of window to generate around the breakpoints (should be approximately the size of the HMW molecules)
+
+gemtools -T set_bc_window \
+		 -i $INDIR/large_sv_calls.bedpe \
+		 -w 100000 \
+		 -m auto \
+		 -o $OUTDIR/large_sv_calls_bc_wndw.bed
